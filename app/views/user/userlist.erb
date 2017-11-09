@@ -1,0 +1,30 @@
+
+<h3>회원 관리</h3> 
+
+<div align="right">
+<% if @email == nil %> 
+<button type="button" class="btn btn-primary btn-sm" onClick="window.location.href='/user/login'">로그인</button>
+<% else %>
+<button type="button" class="btn btn-primary btn-sm" onClick="window.location.href='/user/logout'">로그아웃</button>
+<% end %>
+
+<button type="button" class="btn btn-primary btn-sm" onClick="window.location.href='/user/new'">회원가입</button>
+</div>
+
+<% if @email != nil %>  
+  <%=@email %> 님 환영합니다.
+<% end %>
+
+<% @users.each do |user| %>
+  <div class="card">
+    <div class="card-body">
+      아이디 : <%= user.id %> <br>
+      이메일 : <%= user.email %> <br>
+      패스워드 : <%= user.password %> <br>
+      작성일 : <%= user.created_at.strftime('%D') %> <br>  
+      수정일 : <%= user.updated_at.strftime('%D') %> <br>  
+     <a href='/user/modify/<%= user.id %>'>[변경]</a> 
+     <a href='/user/destroy/<%= user.id %>'>[삭제]</a>
+    </div>
+  </div>
+<% end %>

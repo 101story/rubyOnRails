@@ -1,5 +1,8 @@
 class PostController < ApplicationController
-    def index
+    def index 
+    end
+    
+    def postlist 
         @posts = Post.all
     end
     
@@ -36,7 +39,7 @@ class PostController < ApplicationController
             content:@content
         )
         
-        redirect_to '/'
+        redirect_to '/post/postlist'
     end
     
     def destroy
@@ -46,7 +49,7 @@ class PostController < ApplicationController
         # 글을 지운다. 
         post.destroy
         
-        redirect_to '/'
+        redirect_to '/post/postlist'
     end
     
 end

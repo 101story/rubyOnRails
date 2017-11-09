@@ -9,4 +9,9 @@
 * new bundle install (if you add any gem 'something')
     - bundle install
 * Bootstrap
- 
+
+## DAY2
+* User List Page 
+* User Login (encryption)
+    - MD5
+* Session
