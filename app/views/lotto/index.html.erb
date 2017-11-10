@@ -1,0 +1,11 @@
+<h1>Lotto 번호 추첨</h1> 
+<form action="/lotto/show">
+    추첨 번호 : 
+    <%
+        lotto = [*1..45].sample(6)
+    %>
+   <input type="text" name="lotto" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+   value="<%=lotto%>"> <br>
+    
+  <button type="submit" class="btn btn-primary">당첨번호확인</button>
+</form>
