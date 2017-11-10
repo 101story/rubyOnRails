@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+
   #get '/' => 'post#index'
-  root 'post#index'
-  
+  root 'post#front'
+
   ############
   ## POST
   ############
@@ -44,12 +45,24 @@ Rails.application.routes.draw do
   ############
   ## Artii
   ############
-  
   get 'artii/index'
 
   get 'artii/show'
   
+  ############
+  ## Asked
+  ############
 
+  get 'asked/index'
+  
+  get 'asked/show'
+
+  get 'asked/sign_up'
+  get 'asked/sign_up_process'
+
+  get 'asked/sign_in'
+  get 'asked/sign_in_process'
+  get 'asked/logout'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

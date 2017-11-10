@@ -15,3 +15,7 @@
 * User Login (encryption)
     - MD5
 * Session
+
+## DAY3
+* lotto (using API)
+* Artii (using artii)

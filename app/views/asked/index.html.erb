@@ -1,0 +1,37 @@
+<h2>질문을 해봅시다!</h2> 
+<p><% if session[:user_id].nil? %>
+<button type="button" class="btn btn-primary btn-sm" onClick="window.location.href='/asked/sign_in'">sign in</button>
+<button type="button" class="btn btn-primary btn-sm" onClick="window.location.href='/asked/sign_up'">sign up</button>
+<% else %>
+<%=AskUser.find_by(id: session[:user_id]).name%> 님 환영합니다.</p>
+<button type="button" class="btn btn-primary btn-sm" onClick="window.location.href='/asked/logout'">logout</button>
+<% end %>
+
+<form action="/asked/show">
+  <div class="form-group">
+    <label for="exampleInputEmail1">질문자</label>
+    <select name="username" id="anonymous">
+        <option value=<%=session[:user_id]%>>실명</option>
+        <option value="anony">익명</option>
+    </select>
+    <input type="textarea " name="content" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="enter question">
+    </div>
+  <button type="submit" class="btn btn-primary">질문하기</button>
+</form>
+
+<script>
+    $(document).ready(function() {
+        var anony = $('#anonymous');
+        var content = $('#username');
+        anony.on('change', function() {
+            content.toggle();
+        })
+    })
+</script>
+
+<% @asked.each do |q| %>
+<p>이름 : <%=q.name%></p>
+<p>질문 : <%=q.content%></p>
+---------------<br>
+<% end %>
+
