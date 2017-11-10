@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+# ASCII Arty
+gem 'artii'
+
+# 스크랩
+gem 'httparty'
+gem 'nokogiri'
+
 # rails/db 관리자 페이지 사용 
 gem 'rails_db'
 
@@ -45,6 +52,11 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
+  # 개발을 위해 설치함 
+  gem 'rails_db'
+  gem 'awesome_print'
+  gem 'pry-rails'
   
 end
 

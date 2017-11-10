@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  
+
   #get '/' => 'post#index'
-  root 'post#postlist'
+  root 'post#index'
   
   ############
   ## POST
   ############
-  get '/post/postlist' => 'post#postlist'
+  get '/post/index' => 'post#index'
   get '/post/create' => 'post#create' 
   #== get '/post/create'
   
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   ############
   ## USER
   ############
-  get '/user/userlist' => 'user#userlist'
+  get '/user/index' => 'user#index'
   get '/user/new' => 'user#new'
   get '/user/create' => 'user#create'
   
@@ -32,6 +32,24 @@ Rails.application.routes.draw do
   get '/user/login'
   get '/user/login_process'
   get '/user/logout'
+  
+  
+  ############
+  ## LOTTO
+  ############
+  get 'lotto/index'
+
+  get 'lotto/show'
+
+  ############
+  ## Artii
+  ############
+  
+  get 'artii/index'
+
+  get 'artii/show'
+  
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

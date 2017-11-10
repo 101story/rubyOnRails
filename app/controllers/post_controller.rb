@@ -1,8 +1,7 @@
 class PostController < ApplicationController
-    def index 
-    end
+
     
-    def postlist 
+    def index 
         @posts = Post.all
     end
     

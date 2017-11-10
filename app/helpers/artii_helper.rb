@@ -1,0 +1,2 @@
+module ArtiiHelper
+end

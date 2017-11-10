@@ -1,6 +1,6 @@
 class UserController < ApplicationController
     
-    def userlist 
+    def index 
         @users = User.all
         if session[:user_id]
             @email = User.find(session[:user_id]).email
@@ -50,7 +50,7 @@ class UserController < ApplicationController
         
         user.destroy
         
-        redirect_to '/user/userlist'
+        redirect_to '/user/index'
     end
     
     def login
@@ -67,7 +67,7 @@ class UserController < ApplicationController
             user = User.find_by(email: @email)
             if user.password == encrypted_password
                 session[:user_id] = user.id
-                redirect_to '/user/userlist'
+                redirect_to '/user/index'
             end
         end 
     end
@@ -75,7 +75,7 @@ class UserController < ApplicationController
     def logout
         session.clear
         #session.delete(key)
-        redirect_to '/user/userlist'
+        redirect_to '/user/index'
     end
 
 #class end

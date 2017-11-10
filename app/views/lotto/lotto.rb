@@ -25,3 +25,5 @@ lotto = [1,2,3,4,5,6]
 puts arr & lotto
 a = "[1,2,3]".split(/[\[\],]/)
 puts a.map(&:to_i)
+
+puts [1,2,3]&[1,2,5]
